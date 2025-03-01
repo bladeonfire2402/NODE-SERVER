@@ -14,7 +14,7 @@ app.use(express.json())
 //Kích hoạt cors cho tất cả request 
 app.use(cors())
 
-
+//Kết nối DB
 connectDB()
 
 app.use('/api',indexRouter)
