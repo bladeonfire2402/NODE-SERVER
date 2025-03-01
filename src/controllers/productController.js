@@ -1,9 +1,20 @@
 import productModel from "../models/productModel.js";
+import productValidator from "../validiations/productValidation.js";
 
 
 class ProductController{
     createProduct = async(req,res)=>{
         try{
+            const {errors} = productValidator.validate(req.body,{abortEarly:false})
+
+            if(errors){
+                const error=errors.details.map(err=>err.message)
+                return res.status(400).json({
+                    message:error
+                })
+            }
+
+
             const data = await productModel.create(req.body);
             if(!data){
                 throw new Error("Failed");

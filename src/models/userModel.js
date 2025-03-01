@@ -13,6 +13,10 @@ const UserModel = mongoose.Schema({
         type:String,
         required:true,
         unique:true,
+    },
+    userRole:{
+        type:String,
+        default:"member"
     }
 },{
     timestamps:true,
