@@ -14,7 +14,6 @@ class ProductController{
                 })
             }
 
-
             const data = await productModel.create(req.body);
             if(!data){
                 throw new Error("Failed");
@@ -59,7 +58,7 @@ class ProductController{
             const data= await productModel.findById(req.params.id);
 
             if(!data){
-                throw new Error("Lỗi")
+                throw new Error("Không tìm thấy sản phẩm này")
             }
             
             //Lấy thành công thì trả về dữ liệu

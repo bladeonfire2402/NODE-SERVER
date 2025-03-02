@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken'
 import dotenv from 'dotenv'
-import userModel from '../models/userModel'
+import userModel from '../models/userModel.js'
 
 dotenv.config()
 
@@ -36,3 +36,5 @@ const checkPermission=async(req,res,next)=>{
     }
 
 }
+
+export default checkPermission

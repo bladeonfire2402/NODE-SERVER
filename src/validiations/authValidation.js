@@ -13,4 +13,4 @@ const signInValidator = Joi.object({
     pwd:Joi.string().required().min(8).max(255)
 })
 
-export { signUpValidiator}
+export { signUpValidiator,signInValidator}
